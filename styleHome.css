@@ -5,7 +5,7 @@ body {
   background-color:#272b23;
   overflow: hidden;
   font-family: 'Big Shoulders Text', cursive;
-  font-size: bold;
+  font-weight: bold ;
   color: #14fe17;
   text-shadow: 0 0 5px green;
 
@@ -23,7 +23,6 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: row;
-
 }
 
 .tab-container .button-tab{
@@ -37,17 +36,17 @@ body {
   font-size: 30px;
   font-family: 'Big Shoulders Text', cursive;
   text-shadow: 0 0 5px green;
-}
-
-.tab-container .button-tab :hover{
   cursor: pointer;
-  caret-color: red;
 }
 
-.tab-container .button-tab :active{
-  text-shadow: 0 0 10px red;
+.tab-container .button-tab:hover{
+  text-shadow: 0 0 5px rgb(1, 223, 1);
 }
 
+ 
+.button-tab.active{
+   border-bottom: none; 
+}
 
 .tab-container scan {
   position: relative;
@@ -60,8 +59,31 @@ body {
   margin-top: 80px;
   margin-left: 80px;
   font-size: 25px;
-  display: none;
+  display: flex;
 }
+
+.texto-container .progressbar {
+  border: 2px solid #14fe17;
+  height: 5px;
+  width: 260px;
+  margin-left: 0px;
+  display: flex;
+
+}
+
+.texto-container .progressbar .insideBar{
+  background-color: #14fe17;
+  height: 6px;
+  width: 75%;
+  animation: flicker 0.15s infinite;
+}
+
+.texto-container::after{
+  margin-left: 8px;
+  content: "_";
+  animation:blink 1s infinite;
+ }
+
 
 .flex-container{
   height: 43px;
@@ -130,12 +152,6 @@ body:before {
   z-index:1;
 }
 
-
-
-body:last-child:after {
-  animation:blink 1s infinite;
-  content:"_";
-}
 
 @keyframes wave {
   0% {
